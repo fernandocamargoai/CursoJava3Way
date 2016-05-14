@@ -30,24 +30,24 @@ public class TestaConta {
         System.out.println("O saldo da Conta1 :" + conta1.getSaldo());
         //Chama o método depositar para adicionar saldo na conta
         System.out.println("Será creditado 100 reais na conta ");
-        operacoesConta.depositar(conta1, 100.00);
+        operacoesConta.deposite(conta1, 100.00);
         System.out.println("Saldo da Conta1 :" + conta1.getSaldo());
         //Chama o método sacar para debitar no saldo da conta
         System.out.println("Será debitado 56.43 reais na conta ");
-        operacoesConta.sacar(conta1, 56.43);
+        operacoesConta.saque(conta1, 56.43);
         System.out.println("Saldo da Conta :" + conta1.getSaldo());
         //Imprime o saldo das contas 1 e 2.
         System.out.println("Saldo da Conta 1 :" + conta1.getSaldo());
         System.out.println("Saldo da Conta 2 :" + conta2.getSaldo());
         //Chama o método tranferir para debitar na conta 1 e creditar na conta 2
         System.out.println("Transferir 50.00 de conta 1 para conta2 ");
-        operacoesConta.transferir(conta1, 50.00, conta2);
+        operacoesConta.transfira(conta1, 50.00, conta2);
         //Imprime o saldo das contas 1 e 2.
         System.out.println("Saldo da Conta 1 :" + conta1.getSaldo());
         System.out.println("Saldo da Conta 2 :" + conta2.getSaldo());
         Conta conta3 = new Conta();
         System.out.println("Transferir " + conta1.getSaldo() / 2 + " de conta 1 para conta3 ");
-        operacoesConta.transferir(conta1, conta1.getSaldo() / 2, conta3);
+        operacoesConta.transfira(conta1, conta1.getSaldo() / 2, conta3);
         System.out.println("Saldo da Conta 1 :" + conta1.getSaldo());
         System.out.println("Saldo da Conta 3 :" + conta3.getSaldo());
     }

@@ -24,16 +24,18 @@ public class Transacao {
     }
 
     public String toString() {
-        if (TipoTransacao.TRANSFERENCIA == getTipoTransacao()) {
-            return "Transacao data " + DataUtil.formateDataHora(getData()) + ", conta debito "
-                    + getContaDebito().getNumero() + ", conta credito " + getContaCredito().getNumero() + ", valor " +
-                    getValor() + ", descricao -> " + getDescricao();
-        } else if (TipoTransacao.DEPOSITO == getTipoTransacao()) {
-            return "Deposito data " + DataUtil.formateDataHora(getData()) + ", conta " + getContaCredito().getNumero() + ", valor " + getValor() + ", descricao -> " + getDescricao();
-        } else if (TipoTransacao.SAQUE == getTipoTransacao()) {
-            return "Saque data " + DataUtil.formateDataHora(getData()) + ", conta " + getContaDebito().getNumero() + ", valor " + getValor() + ", descricao -> " + getDescricao();
+        switch (tipoTransacao){
+            case TRANSFERENCIA:
+                return "Transacao data " + DataUtil.formateDataHora(data) + ", conta debito "
+                        + contaDebito.getNumero() + ", conta credito " + contaCredito.getNumero() + ", valor " +
+                        valor + ", descricao -> " + descricao;
+            case DEPOSITO:
+                return "Deposito data " + DataUtil.formateDataHora(data) + ", conta " + contaCredito.getNumero() + ", valor " + valor + ", descricao -> " + descricao;
+            case SAQUE:
+                return "Saque data " + DataUtil.formateDataHora(data) + ", conta " + contaDebito.getNumero() + ", valor " + valor + ", descricao -> " + descricao;
+            default:
+                return "Nenhum tipo de transação";
         }
-        return "Nenhum tipo de transação";
     }
 
 

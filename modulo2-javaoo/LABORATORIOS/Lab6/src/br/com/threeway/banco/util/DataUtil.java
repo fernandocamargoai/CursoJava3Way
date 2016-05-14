@@ -40,7 +40,7 @@ public class DataUtil {
     static {
         System.out.println("Entrando no bloco estático.");
         Date data = Calendar.getInstance().getTime();
-        System.out.println("Saindo do método estático data = " + formateDataHora(data));
+        System.out.println("Saindo do bloco estático data = " + formateDataHora(data));
     }
 
     public static Date data() {
@@ -59,7 +59,10 @@ public class DataUtil {
     }
 
     public static Calendar data(String data) {
-        return data(Integer.valueOf(data.split("/")[0]), Integer.valueOf(data.split("/")[1]), Integer.valueOf(data.split("/")[2]));
+        String[] split = data.split("/");
+        return data(Integer.valueOf(split[0]),
+                Integer.valueOf(split[1]),
+                Integer.valueOf(split[2]));
     }
 
     public static Date getDate(Calendar data) {
@@ -84,10 +87,11 @@ public class DataUtil {
         return calendario.get(Calendar.DAY_OF_MONTH);
     }
 
-    public void somarDia(Date data, int numDias) {
+    public Calendar somarDia(Date data, int numDias) {
         final Calendar calendario = Calendar.getInstance();
         calendario.setTime(data);
         calendario.add(Calendar.DAY_OF_MONTH, numDias);
+        return calendario;
     }
 
     public static String formateData(Date data) {

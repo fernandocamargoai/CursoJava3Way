@@ -7,25 +7,33 @@ import br.com.threeway.banco.util.DataUtil;
 
 public class ContaService {
 
-    public void depositar(Conta contaDestino, double valor) {
-        contaDestino.setSaldo(contaDestino.getSaldo() + valor);
-        this.registreTransacao(null, contaDestino, valor, "deposito na conta " + contaDestino.getNumero(), TipoTransacao.DEPOSITO);
+
+
+    public void deposite(Conta contaCredito, double valor) {
+        contaCredito.setSaldo(contaCredito.getSaldo() + valor);
+        this.registreTransacao(null, contaCredito, valor, "deposito na conta " + contaCredito.getNumero(), TipoTransacao.DEPOSITO);
     }
 
-    public void sacar(Conta contaSaque, double valor) {
-        contaSaque.setSaldo(contaSaque.getSaldo() - valor);
-        this.registreTransacao(contaSaque, null, valor, "saque na conta " + contaSaque.getNumero(), TipoTransacao.SAQUE);
+    public boolean saque(Conta contaDebito, double valor) {
+        if (contaDebito.getSaldo() >= valor) {
+            contaDebito.setSaldo(contaDebito.getSaldo() - valor);
+            this.registreTransacao(contaDebito, null, valor, "saque na conta " + contaDebito.getNumero(), TipoTransacao.SAQUE);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public boolean transferir(Conta contaSaque, double valor, Conta contaDestino) {
-        return transferir(contaSaque, valor, contaDestino, "transferencia para conta " + contaDestino.getNumero());
+    public boolean transfira(Conta contaDebito, double valor, Conta contaCredito) {
+        return transfira(contaDebito, valor, contaCredito, "transferencia para conta " + contaCredito.getNumero());
     }
 
-    public boolean transferir(Conta contaSaque, double valor, Conta contaDestino, String descricao) {
-        if (contaSaque.getSaldo() - valor >= 0) {
-            this.debite(contaSaque, valor);
-            this.credite(contaDestino, valor);
-            this.registreTransacao(contaSaque, contaDestino, valor, descricao, TipoTransacao.TRANSFERENCIA);
+    public boolean transfira(Conta contaDebito, double valor, Conta contaCredito, String descricao) {
+        if (contaDebito.getSaldo() >= valor) {
+            this.debite(contaDebito, valor);
+            this.credite(contaCredito, valor);
+            this.registreTransacao(contaDebito, contaCredito, valor, descricao, TipoTransacao.TRANSFERENCIA);
             return true;
         } else {
             return false;
@@ -54,14 +62,14 @@ public class ContaService {
     // Sobrecarga do método transferir. Quando for invocado este método
     // deverá ser informado um valor para limite (cheque especial) que será adicionado ao
     // saldo da conta para verificar se pode ocorrer a transferência.
-    public void transferir(Conta contaSaque, double valor, Conta contaDestino, double limite) {
+    public void transfira(Conta contaSaque, double valor, Conta contaDestino, double limite) {
         if ((contaSaque.getSaldo() + limite) < valor) {
             System.out.print("Saldo insuficiente para esta operação");
             return;
         }
         // transfere valor da conta para conta destino
-        this.sacar(contaSaque, valor);
-        this.depositar(contaDestino, valor);
+        this.saque(contaSaque, valor);
+        this.deposite(contaDestino, valor);
     }
 
 
