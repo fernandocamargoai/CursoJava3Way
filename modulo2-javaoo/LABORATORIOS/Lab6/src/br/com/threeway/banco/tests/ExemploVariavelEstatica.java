@@ -10,7 +10,7 @@ public class ExemploVariavelEstatica {
         System.out.println("Dia da semana " + DataUtil.DOMINGO);
         System.out.println("Dia da semana " + DataUtil.SEGUNDA);
         System.out.println("Dia da semana " + DataUtil.QUARTA);
-        System.out.println("Dia da semana " + DataUtil.SÁBADO);
+        System.out.println("Dia da semana " + DataUtil.SABADO);
         // Acessando atributos de instância da classe DataUtil
         // Você tem que criar uma instância da classe antes de você poder acessar seu valor.
         DataUtil data = new DataUtil();

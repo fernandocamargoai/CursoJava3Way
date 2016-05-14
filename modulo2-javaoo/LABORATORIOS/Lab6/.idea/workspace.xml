@@ -82,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataUtil.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DataUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/com/threeway/banco/util/DataUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <state vertical-scroll-proportion="-1.4227642">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1681#1682#0" expanded="true" />
@@ -112,10 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContaService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContaService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/threeway/banco/service/ContaService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40379405">
+            <state vertical-scroll-proportion="0.0">
               <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -171,12 +171,12 @@
         <option value="$PROJECT_DIR$/src/br/com/threeway/banco/tests/TestaConstrutor.java" />
         <option value="$PROJECT_DIR$/src/br/com/threeway/banco/tests/MovimentoContaCaixa.java" />
         <option value="$PROJECT_DIR$/src/br/com/threeway/banco/tests/ExemploVariavelEstatica.java" />
-        <option value="$PROJECT_DIR$/src/br/com/threeway/banco/util/DataUtil.java" />
         <option value="$PROJECT_DIR$/src/br/com/threeway/banco/tests/TestaConta.java" />
         <option value="$PROJECT_DIR$/src/br/com/threeway/banco/bean/Conta.java" />
         <option value="$PROJECT_DIR$/src/br/com/threeway/banco/bean/TipoTransacao.java" />
         <option value="$PROJECT_DIR$/src/br/com/threeway/banco/bean/Transacao.java" />
         <option value="$PROJECT_DIR$/src/br/com/threeway/banco/service/ContaService.java" />
+        <option value="$PROJECT_DIR$/src/br/com/threeway/banco/util/DataUtil.java" />
       </list>
     </option>
   </component>
@@ -197,7 +197,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-2" />
     <option name="y" value="-3" />
-    <option name="width" value="1028" />
+    <option name="width" value="1370" />
     <option name="height" value="743" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -687,15 +687,15 @@
       <option name="number" value="Default" />
       <updated>1463189948192</updated>
       <workItem from="1463189953367" duration="4183000" />
-      <workItem from="1463224360600" duration="7389000" />
+      <workItem from="1463224360600" duration="8013000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11572000" />
+    <option name="totallyTimeSpent" value="12196000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-3" width="1028" height="743" extended-state="6" />
+    <frame x="-2" y="-3" width="1370" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -715,7 +715,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24847251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24773414" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1019,10 +1019,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/threeway/banco/util/DataUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/threeway/banco/service/ContaService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1611#1612#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/threeway/banco/util/DataUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4227642">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1681#1682#0" expanded="true" />
@@ -1033,18 +1045,6 @@
             <element signature="e#2424#2425#0" expanded="true" />
             <element signature="e#3269#3270#0" expanded="true" />
             <element signature="e#3349#3350#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/threeway/banco/service/ContaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40379405">
-          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1611#1612#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
           </folding>
         </state>
       </provider>

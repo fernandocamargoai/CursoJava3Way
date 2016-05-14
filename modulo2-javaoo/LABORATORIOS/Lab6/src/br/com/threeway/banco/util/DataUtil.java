@@ -19,7 +19,7 @@ public class DataUtil {
     //diaDaSemana que representa Sexta-Feira
     public static int SEXTA = Calendar.FRIDAY;
     //diaDaSemana que representa Sábado
-    public static int SÁBADO = Calendar.SATURDAY;
+    public static int SABADO = Calendar.SATURDAY;
 
     // MesDoAno que representa Janeiro
     public static int JANEIRO = Calendar.JANUARY;
