@@ -1,0 +1,1 @@
+<b><i>ola, sou o arquivo ola.tag em negrito e itálico</i></b>

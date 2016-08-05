@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="3WAY">
+
+<title>.:: Projeto Banco 3Way NetWorks ::.</title>
+
+<link href="resources/css/bootstrap.css" rel="stylesheet">
+<link href="navbar-static-top.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- Static navbar -->
+	<div class="navbar navbar-default navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Projeto Banco 3Way NetWorks!</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a>
+							<form action="Logout" id="form" method="get">
+								Bem vindo, sr(a). <b> <script type="text/javascript">
+									document.write(getCookie());
+								</script>
+								</b> <input type="submit" name="action"
+									class="btn btn-xs btn-danger" value="sair">
+								<button type="submit" name="action"
+									class="btn btn-xs btn-default" value="info">
+									<img alt="informações" name="info"
+										src="resources/img/information2.png" />
+								</button>
+							</form>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /Static navbar -->
+	<!-- Container -->
+
+	<div class="container">
+		<div class="page-header">
+			<h4>Banco:</h4>
+			<h4>Agência:</h4>
+		</div>
+
+		<div class="panel panel-default">
+			<!-- Panel referente ao menu -->
+			<div class="panel-body">
+				<button type="button" class="btn btn-default"
+					onclick="window.location='./manterCliente.jsp'">Manter
+					Clientes</button>
+				<button type="button" class="btn btn-default"
+					onclick="window.location='. /operacoesBancarias.jsp'">Operações
+					Bancarias</button>
+			</div>
+		</div>
+	</div>
+	<!-- Fim Panel menu -->
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!-- Implementação conteudo da pagina operações bancarias -->
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Operações Bancarias</h3>
+					</div>
+					<div class="panel-body">
+						<form role="form">
+
+							<div class="container">
+								<div class="col-md-12">
+									<h3>
+										Cliente: <span style="color: #990000">${conta.titular.nome}</span>
+									</h3>
+									<h2>Dados Bancarios</h2>
+									<p>
+										Nº conta: <span style="color: #990000"><input disabled="disabled" value="${conta.numero}"></span>
+										Data da abertura: <span style="color: #990000"><input disabled="disabled" value="${conta.dataFormatada}"></span>
+										Saldo: <span style="color: #990000"><input disabled="disabled" value="${conta.saldo}"></span>
+									</p>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<p class="text-right" style="padding-right: 5%;">
+									<button class="btn btn-sn btn-primary" data-toggle="modal"
+										data-target="#modalConta">Abrir Conta</button>
+									<button class="btn btn-sn btn-success" data-toggle="modal"
+										data-target="#modalSaque">Deposito</button>
+									<button class="btn btn-sn btn-danger" data-toggle="modal"
+										data-target="#modalDeposito">Saque</button>
+									<button class="btn btn-sn btn-warning" data-toggle="modal"
+										data-target="#modalTransferencia">Transferencia</button>
+								</p>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Transações</h3>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>Tipo Transação</th>
+									<th>Titular/Conta Afetada</th>
+									<th>Data</th>
+									<th>Valor</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>--</td>
+									<td>--</td>
+									<td>--</td>
+									<td>--</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
