@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<p:dialog id="idDialogSaque" appendTo="@(body)" header="Saque" visible="#{operacoesBancariasBean.flagDialogSaque}" 
+	widgetVar="dialogSaque" modal="true" showEffect="explode"
+	hideEffect="bounce" closable="false" resizable="false">
+
+<h:form>
+
+	<h:panelGrid column="2" cellpadding="5">
+		<h:outputLabel value="#{msg['valor']}: "/>
+		<p:inputText value="#{operacoesBancariasBean.valorSaque}"/>	
+	</h:panelGrid>
+	
+	<p:spacer height="5"/>
+	<p:separator />
+	
+	<h:panelGrid columns="2" cellpadding="10">
+		<p:commandButton value="OK" update=":idDialogSaque :opBancariasForm" actionListener="#{operacoesBancariasBean.efetuarSaque()}">
+			<f:setPropertyActionListener target="#{operacoesBancariasBean.flagDialogSaque}" value="false" />
+		</p:commandButton>
+		<p:commandButton value="Cancelar" update=":idDialogSaque :opBancariasForm">
+			<f:setPropertyActionListener target="#{operacoesBancarias.flagDialogSaque}" value="false" />
+		</p:commandButton>
+	</h:panelGrid>
+
+</h:form>
+	
+</p:dialog>
+</html>

@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>#{msg['titulo.cabecalho']}</title>
+	<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" />
+	<script src="#{facesContext.externalContext.requestContextPath}/resources/js/function.js"></script>
+</h:head>
+
+<h:body>
+
+<p:layout fullPage="true">  
+  
+    <p:layoutUnit style="border:none !important" position="north" size="60" >  
+        <ui:include src="topoPagina.xhtml" />
+    </p:layoutUnit>  
+  
+    <p:layoutUnit  position="center">
+    	
+    	<h:panelGrid width="100%" cellpadding="10">
+	
+			<h:panelGrid columns="5" cellpadding="10">
+				<h:outputLabel value="#{msg['banco']}: " />
+				<h:outputLabel value="#{loginBean.agenciaSistema.banco.nome}" />
+				<p:spacer width="15"/>
+				<h:outputLabel value="#{msg['agencia']}: " />
+				<h:outputLabel value="#{loginBean.agenciaSistema.nome}" />
+			</h:panelGrid>
+			
+			<p:separator />
+			
+			<p:panel>
+				
+				<h:panelGrid style="width:100%;" cellpadding="5">
+				
+					<h:form id="formNavegacao">
+						
+						<h:panelGrid columns="2">
+						
+							<p:commandButton icon="ui-icon-person" action="manterCliente" value="#{msg['titulo.aba.cliente']}" />
+							
+							<p:commandButton icon="ui-icon-calculator" disabled="#{manterClienteBean.cliente.identificador == null}" 
+											action="#{operacoesBancariasBean.selecionaCliente(manterClienteBean.cliente)}" value="#{msg['titulo.aba.operacoesBancarias']}">	
+							</p:commandButton>
+											
+											
+							
+						</h:panelGrid>
+						
+					</h:form>
+					
+					<ui:insert name="conteudo" />
+					 
+				</h:panelGrid>
+				
+			</p:panel>
+		
+		</h:panelGrid>
+       
+    </p:layoutUnit>  
+    
+     <p:layoutUnit style="border:none !important" size="15%" position="east"/>  
+    
+     <p:layoutUnit style="border:none !important" size="15%" position="west"/>  
+  
+</p:layout>  
+	
+</h:body>
+</html>

@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<p:dialog id="idDialogDeposito" appendTo="@(body)" header="Deposito" visible="#{operacoesbancariasBean.flagDialogDeposito}"
+	widgetVar="dialogDeposito" modal="true" closable="false"
+	showEffect="explode" hideEffect="bounce" resizable="false">
+	
+	<h:form id="formDialogDeposito">
+
+	<h:panelGrid columns="2" cellpadding="5">
+		<h:outputLabel value="#{msg['valor']}: " />
+		<p:inputText value="#{operacoesBancariasBean.valorDeposito}"/>
+	</h:panelGrid>
+	<p:spacer height="5" />
+	<p:separator />
+
+	<h:panelGrid columns="2" cellpadding="10">
+		<p:commandButton value="OK" update=":idDialogDeposito :opBancariasForm" actionListener="#{operacoesBancariasBean.efetuarDeposito()}" >
+			<f:setPropertyActionListener target="#{operacoesBancariasBean.flagDialogDeposito}" value="false" />
+		</p:commandButton>
+		<p:commandButton value="Cancelar" update=":idDialogDeposito :opBancariasForm" >
+			<f:setPropertyActionListener target="#{operacoesBancariasBean.flagDialogDeposito}" value="false" />
+		</p:commandButton>
+	</h:panelGrid>	
+	
+	</h:form>
+</p:dialog>
+
+</html>

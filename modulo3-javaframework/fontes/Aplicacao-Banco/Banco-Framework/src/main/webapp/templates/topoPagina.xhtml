@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<p:panel>
+<h:panelGrid columns="2" widht="100%">
+	<h3>#{msg['titulo.cabecalho']}</h3>
+	<h:form id="formIntenacionalizacao" style="text-align: right !important">
+	
+		<h:outputLabel value="#{msg['saudacao']} #{longinBean.login}"/>
+		<p:spacer width="15"/>
+		
+		<p:commandLink styleClass="internacionalizacao" update="@all" action="#{internacionalizacaoBean.portugueseLocale()}">
+			<p:graphicImage value="resources/img/brasil.png"/>
+		</p:commandLink>
+		
+		<p:spacer width="5"/>
+		
+		<p:commandLink styleClass="internacionalizacao" update="@all" action="#{internacionalizacaoBean.englishLocale()}">
+			<p:graphicImage value="resources/img/estados_unidos.png"/>			
+		</p:commandLink>
+		
+		<p:spacer width="15"/>
+		<p:commandLink update="@all" action="#{loginBean.realizarLogout()}" value="#{msg['botao.sair']}"/>
+		
+	</h:form>
+</h:panelGrid>
+</p:panel>
+</html>

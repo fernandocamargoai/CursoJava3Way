@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Formulario Completo</title>
+</head>
+<body>
+<h4>Cadastro de Clientes</h4>
+<hr>
+	<p>Selecione a cor de fundo</p>
+	<p> <input type=radio name="Rad" value="1"
+		onclick="document.bgColor='green'"> Fundo Verde
+	<input type=radio name="Rad" value="2"
+		onclick="document.bgColor='blueviolet'"> Fundo Violeta
+	<input type=radio name="Rad" value="3"
+		onclick="document.bgColor='#FFFF00'"> Fundo Amarelo
+	</p>
+
+	<form method="post" action="formulario.html">
+		<input type="hidden" name="email" value="mail@3way.com.br"> 
+		<b> Nome: </b> <input type="text" name="nome" size="30" maxlength="5">
+		<br>
+		<br>
+		<b> Digite o seu E-Mail: </b> 
+		<input type="text" name="anyformfrom" size="30"> 
+		<b> Senha do E-Mail: </b> 
+		<input type="password" name="senha" size="5" maxlength="5"> 
+		<br>
+		<br>
+		<b>Sexo:</b> <br>
+		<input type="radio" name="sexo"> Masculino <br>
+		<input type="radio" name="sexo"> Feminino <b> <br>
+		<br>
+		Produtos Comprados:</b><br>
+		<input type="checkbox" name="computador"> Computador <br>
+		<input type="checkbox" name="impressora"> Impressora <br>
+		<input type="checkbox" name="monitor"> Monitor <br>
+		<input type="checkbox" name="teclado"> Teclado <br>
+		<br>
+		<b> Estado: </b> <select name="listagem" selected="">
+			<option size="3">GO</option>
+			<option>MG</option>
+			<option>DF</option>
+			<option>RJ</option>
+			<option>SP</option>
+		</select> <br>
+		<br>
+		<b> Histórico do Cliente: </b><br>
+		<textarea name="observacao" cols="30" rows="3"> </textarea> <br>
+		<br>
+		<input type="file" name="Procurar" value="Procurar"> 
+		<input type="submit" value="Enviar Informações"> 
+		<input type="reset" value="Limpar"> <br>
+	</form>
+</body>
+</html>

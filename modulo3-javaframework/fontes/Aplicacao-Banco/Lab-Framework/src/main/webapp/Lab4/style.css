@@ -1,0 +1,48 @@
+html,body {
+	height: 99%;
+	margin: 1px;
+	padding: 0;
+	border: 0;
+}
+
+div {
+	margin: 0;
+	border: 0;
+}
+
+.content {
+	display: table;
+	width: 100%;
+	border-collapse: separate;
+	height: 80%;
+}
+
+.Col-Left {
+	display: table-cell;
+	widht: 15%;
+	height: 100%;
+}
+
+.Col-center {
+	display: table-cell;
+	width: 70%;
+	height: 100%
+}
+
+.Col-right {
+	display: table-cell;
+	widht: 15%;
+	height: 100%;
+}
+
+.border {
+	border: 1px solid;
+	border-radius: 25px;
+}
+
+#header,#footer {
+	height: 10%;
+	position: relative;
+	z-index: 1;
+}
+

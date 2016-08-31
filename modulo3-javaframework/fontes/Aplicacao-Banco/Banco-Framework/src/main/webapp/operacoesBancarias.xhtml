@@ -1,0 +1,113 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+
+	<ui:define name="conteudo">
+
+		<h:form id="opBancariasForm">
+			<p:panel header="">
+
+				<h:panelGrid columns="8" cellpadding="5">
+					<h:outputLabel value="N° conta: " />
+					<h:outputLabel value="#{operacoesBancariasBean.contaCliente.numero}" />
+					<p:spacer width="10" />
+					<h:outputLabel value="Data Abertura:" />
+					<h:outputLabel value="#{operacoesBancariasBean.contaCliente.dataAbertura}" />
+					<p:spacer width="10" />
+					<h:outputLabel value="Saldo: " />
+					<h:outputLabel value="#{operacoesBancariasBean.contaCliente.saldo}"  >
+						<f:convertNumber currencySymbol="R$" type="currency" groupingUsed="true"></f:convertNumber>
+					</h:outputLabel>
+				</h:panelGrid>
+
+				<p:spacer height="20" />
+				<p:separator />
+				<p:spacer height="20" />
+
+				<h:panelGrid columns="4" cellpadding="2">
+					<p:commandButton value="Abrir Conta" update=":idDialogAbrirConta"
+						disabled="#{operacoesBancariasBean.contaCliente.identificador != null}"
+						oncomplete="PF('dialogAbrirConta').show();">
+						<f:setPropertyActionListener
+							target="#{operacoesBancariasBean.flagDialogAbrirConta}"
+							value="true" />
+					</p:commandButton>
+
+					<p:commandButton value="Deposito" update=":idDialogDeposito"
+						disabled="#{operacoesBancariasBean.contaCliente.identificador == null}"
+						oncomplete="PF ('dialogDeposito').show();">
+						<f:setPropertyActionListener
+							target="#{operacoesBancariasBean.flagDialogDeposito}"
+							value="true" />
+					</p:commandButton>
+
+					<p:commandButton value="Saque" update=":idDialogSaque"
+						disabled="#{operacoesBancariasBean.contaCliente.identificador == null}"
+						oncomplete="PF('dialogSaque').show();">
+						<f:setPropertyActionListener
+							target="#{operacoesBancariasBean.flagDialogSaque}" value="true" />
+					</p:commandButton>
+
+					<p:commandButton value="Transferencia"
+						disabled="#{operacoesBancariasBean.contaCliente.identificador == null}"
+						onclick="PF('dialogTransf').show();">
+
+					</p:commandButton>
+				</h:panelGrid>
+			</p:panel>
+
+			<p:panel>
+				<p:dataTable emptyMessage="#{msg['tabela.transacao.empty']}"
+					styleClass="fonte"
+					value="#{operacoesBancariasBean.transacoesConta}"
+					rowStyleClass="#{operacoesBancariasBean.determinaCorLinhaTabela(transacao)}"
+					var="transacao">
+					<f:facet name="header">
+					#{msg['topoTabelaTransacao']}
+				</f:facet>
+
+					<p:column headerText="#">
+						<h:outputLabel value="#{transacao.identificador}" />
+					</p:column>
+
+					<p:column headerText="#{msg['form.transacao.tipoTransacao']}">
+						<h:outputLabel value="#{transacao.tipoTransacao}" />
+					</p:column>
+
+					<p:column headerText="#{msg['form.transacao.contaCredito']}">
+						<h:outputLabel
+							value="#{transacao.contaCredito.titular.nome}/#{tramsacao.contaCredito.numero}" />
+					</p:column>
+
+					<p:column headerText="#{msg['form.transacao.contaDebito']}">
+						<h:outputLabel
+							value="#{transacao.contaDebito.titular.nome}/#{transacao.contaDebito.numero}" />
+					</p:column>
+
+					<p:column headerText="#{msg['data']}">
+						<h:outputLabel value="#{transacao.data}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputLabel>
+					</p:column>
+
+					<p:column headerText="#{msg['valor']}">
+						<h:outputLabel value="#{transacao.valor}">
+							<f:convertNumber currencySymbol="R$" type="currency"
+								groupingUsed="true"></f:convertNumber>
+						</h:outputLabel>
+					</p:column>
+				</p:dataTable>
+			</p:panel>
+
+		</h:form>
+
+		<ui:include src="dialogDeposito.xhtml" />
+		<ui:include src="dialogSaque.xhtml" />
+		<ui:include src="dialogTransferencia.xhtml" />
+		<ui:include src="dialogAbrirConta.xhtml" />
+
+	</ui:define>
+</ui:composition>

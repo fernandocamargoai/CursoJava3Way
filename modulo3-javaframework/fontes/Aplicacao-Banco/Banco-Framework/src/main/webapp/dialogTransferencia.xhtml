@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<p:dialog id="idDialogTransf" appendTo="@(body)" header="Tranferencia" 
+	visible="#{operacoesBancariasBean.flagDialogTransferencia}"
+	widgetVar="dialogTransf" modal="true" showEffect="explode"
+	hideEffect="bounce" closable="false" resizable="false">
+	
+	<h:form id="formDialogTransf"> 
+	<p:panel>
+		<h:panelGrid columns="4" cellpadding="5">
+			<h:outputLabel value="Nº: "/>
+			<p:inputText size="15" disabled="true" value="#{operacoesBancariasBean.contaCliente.numero}"/>
+			
+			<h:outputLabel value="Data Abertura:"/>			
+			<p:inputText size="35" disabled="true" value="#{operacoesBancariasBean.contaCliente.dataAbertura}">
+				<f:convertDateTime pattern="dd/MM/yyyy"/>
+			</p:inputText>
+			
+			<h:outputLabel value="Saldo:"/>
+			<p:inputText size="15" disabled="true" value="#{operacoesbancariasBean.contaCliente.saldo}" >
+				<f:convertNumber currencySymbol="R$" type="currency" groupingUsed="true" />
+			</p:inputText>
+			
+			<h:outputLabel value="Titular da Conta: "/>
+			<p:inputText size="35" disabled="true" value="#{operacoesBancariasBean.contaCliente.titular.nome}"/>
+		</h:panelGrid>	
+	</p:panel>
+	<p:spacer height="5"/>
+	<p:panel header="Dados Transferencia">
+		
+		<h:panelGrid columns="2" cellpadding="5">
+			<h:outputLabel value="Nº Conta Destino:" />
+			<p:inputText value="#{operacoesBancariasBean.numeroContaTransferencia}"/>
+			<h:outputLabel value="Valor da Tranferencia:"/>
+			<p:inputText value="#{operacoesBancariasBean.valorTransferencia}"/>
+		</h:panelGrid>
+			
+	</p:panel>
+	<p:spacer height="5"/>
+	<p:separator />
+	<h:panelGrid columns="2" cellpadding="10">
+		<p:commandButton value="Realizar Tranferencia" update=":idDialogTransf :opBancariasForm" actionListener="#{operacoesBancariasBean.realizarTransferencia()}">
+			<f:setPropertyActionListener target="#{operacoesBancariasBean.flagDialogTransferencia}" value="false" />
+		</p:commandButton>
+		
+		<p:commandButton value="Cancelar" update=":idDialogTransf :opBancariasForm">
+			<f:setPropertyActionListener target="#{operacoesBancariasBean.flagDialogTransferencia}" value="false" />
+		</p:commandButton>
+	
+	</h:panelGrid>
+</h:form>
+</p:dialog>
+
+</html>

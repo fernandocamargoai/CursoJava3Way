@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<p:dialog id="idDialogAbrirConta" appendTo="@(body)" visible="#{operacoesBancariasBean.flagDialogAbrirConta}"
+	header="Abertura de Conta" widgetVar="dialogAbrirConta" modal="true"
+	closable="false" showEffect="explode" hideEffect="bounce"
+	resizable="false">
+	
+	<h:form id="formDialogAbrirConta">
+		<p:messages id="messagesDialog1" showDetail="true" autoUpdate="true" closable="true" />
+	
+	<h:panelGrid columns="2" cellpadding="5">
+		<h:outputLabel value="Data Abertura:" />		
+		<p:inputText disabled="true" value="#{operacoesBancariasBean.contaCliente.dataAbertura}">
+			<f:convertDateTime pattern="dd/MM/yyyy"/>
+		</p:inputText>		
+		<h:outputLabel value="Numero da Conta:" />
+		<p:inputText value="#{operacoesBancariasBean.contaCliente.numero}"/>
+		<h:outputLabel value="Saldo Inicial:" />
+		<p:inputText value="#{operacoesBancariasBean.contaCliente.saldo}"/>
+	</h:panelGrid>
+	
+	<p:spacer height="5"/>
+	
+	<p:separator />
+	
+	<h:panelGrid columns="2" cellpadding="10">
+		<p:commandButton value="Abrir Conta" update=":idDialogAbrirConta :opBancariasForm" actionListener="#{operacoesBancariasBean.abrirConta()}">
+			<f:setPropertyActionListener target="#{operacoesBancariasBean.flagDialogAbrirConta}"  value="false" />
+		</p:commandButton>
+		<p:commandButton value="Cancelar" update=":idDialogAbrirConta :opBancariasForm">
+			<f:setPropertyActionListener target="#{operacoesBancariasBean.flagDialogAbrirConta}"  value="false" />
+		</p:commandButton>	
+	</h:panelGrid>
+	
+	</h:form>
+
+</p:dialog>
+
+</html>

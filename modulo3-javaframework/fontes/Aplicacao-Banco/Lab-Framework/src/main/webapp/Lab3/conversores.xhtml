@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+<h:body>
+<h3>Conversores Padrão</h3>
+
+	<h:form id="formPadrao">
+		<h:panelGrid columns="3" cellpadding="10">
+		
+			<h:outputLabel value="Informe a Data de Nascimento"/>
+			<h:inputText id="nascimento">
+				<f:convertDateTime type="date" pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/> 
+			</h:inputText>
+			<h:message for="nascimento" style="color:red"/>
+			<h:outputLabel value="Informe seu Peso"/>
+			<h:inputText id="peso">
+				<f:convertNumber integerOnly="true"/>
+			</h:inputText>
+			<h:message for="peso" style="color:red"/>
+		
+		</h:panelGrid>
+		
+		<h:commandButton value="Utilizar Converter Padrão"/>
+	</h:form>
+	<hr/>
+	
+<h3>Conversores Personalizados</h3>
+	
+	<h:form id="formCustom">
+		<h:panelGrid columns="3" celloadding="10">
+			<h:outputLabel value="Informe a temperatura em Celsius"/>
+			<h:inputText id="celsius" value="#{conversoresBean.celsiusToFahrenheit}">
+				<f:converter converterId="celsiusToFahrenheitConverter"/>
+			</h:inputText>
+			
+			<h:message for="celsius" style="color:red"/>
+			
+		</h:panelGrid>
+		<h:commandButton value="Calcular Utilizando Converter">
+			<f:ajax execute="formCustom" render="formCustom"/>
+		</h:commandButton>
+	</h:form>
+</h:body>
+	
+	
+</html>

@@ -1,0 +1,128 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/template.xhtml">
+
+	<ui:define name="conteudo">
+	
+	<h:form id="manterClientesForm">
+	
+		<p:growl id="growl" autoUpdate="true" showDetail="true" />
+		
+		<p:panel id="panelCadastro" header="">
+		
+		<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+
+			<p:panelGrid style="width:100%;">
+
+				<p:row>
+					<p:column styleClass="textRight">
+						<h:outputLabel value="#{msg['form.cliente.nome']}:" />
+					</p:column>
+					
+					<p:column>
+						<p:inputText style="width:100%;" value="#{manterClienteBean.cliente.nome}" size="45" />
+					</p:column>
+					
+					<p:column styleClass="textRight">
+						<h:outputLabel value="#{msg['form.cliente.telefone']}:" />
+					</p:column>
+					
+					<p:column>
+						<p:inputMask style="width:100%;" value="#{manterClienteBean.cliente.telefone}" mask="(99)9999-9999" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column styleClass="textRight">
+						<h:outputLabel value="#{msg['form.cliente.endereco']}:" />
+					</p:column>
+					
+					<p:column colspan="3">
+						<p:inputText  value="#{manterClienteBean.cliente.endereco}" style="width:100%;" />
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column styleClass="textRight">
+						<h:outputLabel value="#{msg['form.cliente.rg']}:" />
+					</p:column>
+					
+					<p:column>
+						<p:inputText  value="#{manterClienteBean.cliente.rg}" style="width:100%;" />
+					</p:column>
+					
+					<p:column styleClass="textRight">
+						<h:outputLabel value="#{msg['form.cliente.cpf']}:" />
+					</p:column>
+					
+					<p:column>
+						<p:inputMask  value="#{manterClienteBean.cliente.cpf}" style="width:100%;" mask="999.999.999-99" />
+					</p:column>
+				</p:row>
+
+			</p:panelGrid>
+			
+			<h:panelGrid columns="3" cellpadding="10">
+				
+				<p:commandButton actionListener="#{manterClienteBean.limpar()}" update="panelCadastro :formNavegacao" value="#{msg['btn.cliente.limpar']}" />
+				
+				<p:commandButton update="manterClientesForm manterClientesForm:growl :formNavegacao" actionListener="#{manterClienteBean.salvar()}" value="#{msg['btn.cliente.salvar']}" />
+				
+				<p:commandButton rendered="#{manterClienteBean.cliente.identificador != null}" update="manterClientesForm :formNavegacao" actionListener="#{manterClienteBean.excluir()}" value="#{msg['btn.cliente.excluir']}" />
+			
+			</h:panelGrid>
+			
+		</p:panel>
+
+		<p:panel>
+
+			<p:dataTable emptyMessage="#{msg['tabela.cliente.empty']}" var="cliente" value="#{manterClienteBean.clientesCadastrados}" styleClass="fonte">
+
+				<f:facet name="header">  
+							#{msg['topoTabelaCliente']}
+	        	</f:facet>
+
+				<p:column headerText="#">
+					<h:outputLabel value="#{cliente.identificador}" />
+				</p:column>
+
+				<p:column headerText="#{msg['form.cliente.nome']}">
+					<h:outputLabel value="#{cliente.nome}" />
+				</p:column>
+
+				<p:column headerText="#{msg['form.cliente.endereco']}">
+					<h:outputLabel value="#{cliente.endereco}" />
+				</p:column>
+
+				<p:column headerText="#{msg['form.cliente.telefone']}">
+					<h:outputLabel value="#{cliente.telefone}" />
+				</p:column>
+
+				<p:column headerText="#{msg['form.cliente.rg']}">
+					<h:outputLabel value="#{cliente.rg}" />
+				</p:column>
+
+				<p:column headerText="#{msg['form.cliente.cpf']}">
+					<h:outputLabel value="#{cliente.cpf}" />
+				</p:column>
+
+				<p:column headerText="#{msg['tabela.acoes']}">
+				
+					[<p:commandLink value="Carregar" update=":manterClientesForm:panelCadastro :formNavegacao">
+						<f:setPropertyActionListener target="#{manterClienteBean.cliente}" value="#{cliente}" />
+					</p:commandLink>]
+					
+				</p:column>
+
+			</p:dataTable>
+
+		</p:panel>
+	
+	</h:form>
+	
+	</ui:define>
+
+</ui:composition>

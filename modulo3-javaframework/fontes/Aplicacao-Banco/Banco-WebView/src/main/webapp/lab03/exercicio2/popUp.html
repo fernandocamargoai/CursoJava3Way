@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Funções JS</title>
+</head>
+<script>
+	function abrindo() {
+		window.open("", "OutraJanela",
+				'scrollbars=yes,resizable=yes,width=650,height=550')
+		document.write("__tag_10$17_<head>__tag_10$29_Essa é outra janela")
+		document.write("__tag_11$17_</head>__tag_11$32_")
+		document.write("__tag_12$17_ESSA É UMA OUTRA PÁGINA__tag_12$44_<br>")
+		document.write("__tag_13$17_")
+		document.write("__tag_14$17_Java Script__tag_14$32_<br>")
+		document.write("__tag_15$17_</html>")
+		document.close()
+	}
+	
+	function alerta(){
+		alert('Cuidado');
+	}
+
+	function confirmar(){
+		if(confirm('Deseja abrir a página?')){
+			abrindo();
+		}
+	}
+</script>
+<body bgcolor="#FFFF00">
+	<p></p>
+	<p>Ao clicar no botão uma nova página irá abrir!</p>
+	<form method="POST" name="Form1">
+		<p></p>
+		<input type="button" name="abre" value="Nova Janela" onclick="abrindo();">
+		<input type="button" name="alert" value="Alerta" onclick="alerta();">
+		<input type="button" name="confirm" value="Confirmação" onclick="confirmar();">
+	</form>
+</body>
+</html>

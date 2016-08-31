@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>#{msg['titulo.cabecalho']}</title>
+	<link rel="stylesheet" type="text/css"
+		href="#{facesContext.externalContext.requestContextPath}/resources/css/style.css" />
+	<script
+		src="#{facesContext.externalContext.requestContextPath}/resources/js/function.js" />
+</h:head>
+
+<h:body>
+	<ui:include src="templates/topoPagina.xhtml" />
+
+	<h:form id="formLogin">
+
+		<p:growl id="growl" autoUpdate="true" showDetail="true" />
+
+		<p:panel styleClass="painelLogin" header="#{msg['realizarLogin']}">
+			<h:panelGrid styleClass="textRight" columns="2" cellpadding="5">
+				<h:outputLabel value="#{msg['login']}:" />
+				<p:inputText requiredMessage="Campo Login Obrigatório"
+					required="true" value="#{loginBean.login}" />
+
+				<h:outputLabel value="#{msg['senha']}: " />
+				<p:password requiredMessage="Campo Senha Obrigatório"
+					required="true" value="#{loginBean.senha}" />
+
+				<p:spacer width="70" height="0" />
+				<p:commandButton action="#{loginBean.realizarLogin()}"
+					update="growl" value="#{msg['entrar']}" />
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+
+</h:body>
+</html>
