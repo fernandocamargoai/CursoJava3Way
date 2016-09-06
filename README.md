@@ -35,5 +35,5 @@
 
 ### JasperReports
 
-- https://www.casadocodigo.com.br/pages/sumario-ireport
+- https://www.casadocodigo.com.br/products/livro-ireport
 
