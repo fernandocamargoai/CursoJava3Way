@@ -37,3 +37,9 @@
 
 - https://www.casadocodigo.com.br/products/livro-ireport
 
+# Exemplos
+
+## Projetos pré-configurados
+
+- https://github.com/npi-ufc-qxd/exemplo-jpa-jsf-spring
+- https://github.com/michelrisucci/spring-jsf-jpa-quickstart
