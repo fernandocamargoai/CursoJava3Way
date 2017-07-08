@@ -1,0 +1,209 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="AbstractClassName" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="AbstractClassWithPublicConstructor" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="AbstractClassWithoutAbstractMethod" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="AddEmptyString" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="AssertWithinFinallyBlock" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="AssignCollectionSort" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="AssignCollectionUnique" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="AssignmentInConditional" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BigDecimalInstantiation" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BooleanGetBoolean" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="BooleanMethodReturnsNull" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BrokenNullCheck" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BrokenOddnessCheck" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CatchArrayIndexOutOfBoundsException" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="CatchError" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="CatchException" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CatchIllegalMonitorStateException" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CatchIndexOutOfBoundsException" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="CatchNullPointerException" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="CatchRuntimeException" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="CatchThrowable" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ChainedTest" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ClassForName" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="CloneableWithoutClone" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ClosureAsLastMethodParameter" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="CollectAllIsDeprecated" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CompareToWithoutComparable" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ComparisonOfTwoConstants" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ComparisonWithSelf" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConfusingClassNamedException" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConfusingMethodName" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConfusingMultipleReturns" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConfusingTernary" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConsecutiveLiteralAppends" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ConsecutiveStringConcatenation" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConstantAssertExpression" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConstantIfExpression" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConstantTernaryExpression" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConstantsOnlyInterface" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="CouldBeElvis" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CoupledTestCase" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="DeadCode" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="DoubleNegative" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="DuplicateCaseStatement" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="DuplicateImport" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DuplicateListLiteral" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="DuplicateMapKey" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="DuplicateMapLiteral" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="DuplicateNumberLiteral" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="DuplicateSetValue" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DuplicateStringLiteral" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="EmptyElseBlock" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="EmptyForStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="EmptyIfStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="EmptyMethodInAbstractClass" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="EmptySwitchStatement" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="EmptyWhileStatement" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="EqualsOverloaded" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ExceptionExtendsError" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ExplicitArrayListInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToAndMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToCompareToMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToDivMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToEqualsMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToGetAtMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToLeftShiftMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToMinusMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToModMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToMultiplyMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToOrMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToPlusMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToPowerMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToRightShiftMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitCallToXorMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitGarbageCollection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ExplicitHashMapInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitHashSetInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitLinkedHashMapInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitLinkedListInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitStackInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ExplicitTreeSetInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="FileCreateTempFile" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="FinalClassWithProtectedMember" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ForLoopShouldBeWhileLoop" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="GStringAsMapKey" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="GetterMethodCouldBeProperty" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="GrailsPublicControllerMethod" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="GrailsServletContextReference" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="GrailsSessionReference" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="GrailsStatelessService" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="GroovyLangImmutable" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="HardCodedWindowsFileSeparator" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="HardCodedWindowsRootDirectory" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="HashtableIsObsolete" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ImplementationAsType" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ImportFromSamePackage" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ImportFromSunPackages" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="InconsistentPropertyLocking" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="InconsistentPropertySynchronization" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="InsecureRandom" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="IntegerGetInteger" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="InvertedIfElse" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="JUnitAssertAlwaysFails" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="JUnitAssertAlwaysSucceeds" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="JUnitFailWithoutMessage" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="JUnitPublicNonTestMethod" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="JUnitSetUpCallsSuper" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="JUnitTearDownCallsSuper" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="JUnitTestMethodWithoutAssert" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="JUnitUnnecessarySetUp" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="JUnitUnnecessaryTearDown" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="JdbcConnectionReference" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="JdbcResultSetReference" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="JdbcStatementReference" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="LineLength" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="LoggerForDifferentClass" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="LoggerWithWrongModifiers" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="LoggingSwallowsStacktrace" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="LongLiteralWithLowerCaseL" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="MisorderedStaticImports" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="MissingNewInThrowStatement" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="MultipleLoggers" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="NestedSynchronization" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="NonFinalPublicField" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ObjectFinalize" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ObjectOverrideMisspelledMethodName" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ParameterReassignment" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="PrintStackTrace" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="Println" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="PublicFinalizeMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="RandomDoubleCoercedToZero" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="RemoveAllOnSelf" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ReturnNullFromCatchBlock" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ReturnsNullInsteadOfEmptyArray" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ReturnsNullInsteadOfEmptyCollection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="StatelessSingleton" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="StaticCalendarField" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="StaticConnection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="StaticDateFormatField" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="StaticMatcherField" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="StaticSimpleDateFormatField" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="SwallowThreadDeath" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="SystemErrPrint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SystemOutPrint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="TernaryCouldBeElvis" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ThreadGroup" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="ThrowError" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ThrowException" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ThrowExceptionFromFinallyBlock" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ThrowNullPointerException" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ThrowRuntimeException" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ThrowThrowable" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryBigDecimalInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryBigIntegerInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryBooleanExpression" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryBooleanInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryCallForLastElement" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryCallToSubstring" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryCatchBlock" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryCollectCall" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryCollectionCall" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryDefInFieldDeclaration" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryDefInMethodDeclaration" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryDefInVariableDeclaration" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryDotClass" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryDoubleInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryElseStatement" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryFail" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryFloatInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryGString" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryGroovyImport" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryIfStatement" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryInstanceOfCheck" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryInstantiationToGetClass" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryIntegerInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryLongInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryModOne" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryNullCheck" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryNullCheckBeforeInstanceOf" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryObjectReferences" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryOverridingMethod" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryPackageReference" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryParenthesesForMethodCallWithClosure" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryPublicModifier" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryStringInstantiation" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessarySubstring" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryTernaryExpression" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnsafeArrayDeclaration" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnusedArray" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnusedMethodParameter" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnusedObject" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnusedPrivateField" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnusedPrivateMethod" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnusedVariable" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UseAssertEqualsInsteadOfAssertTrue" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UseAssertFalseInsteadOfNegation" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UseAssertNullInsteadOfAssertEquals" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UseAssertSameInsteadOfAssertTrue" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UseAssertTrueInsteadOfAssertEquals" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UseAssertTrueInsteadOfNegation" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UseCollectMany" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="UseCollectNested" enabled="true" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="VectorIsObsolete" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="WaitOutsideOfWhileLoop" enabled="true" level="INFO" enabled_by_default="true" />
+  </profile>
+</component>
