@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Filmes</title>
+</h:head>
+<h:body>
+	<p:panel id="panel">
+		<h:form id="cadastrar">
+			<p:outputLabel for="nome" value="Nome:"/>
+			<p:inputText id="nome" value="#{filmesBeans.filme.nome}"/>
+			<p></p>
+			<p:outputLabel for="TipoFilme" value="Tipo:"/>
+
+			<p:selectOneMenu id="TipoFilme" value="#{filmesBeans.filme.tipo}">
+				<f:selectItems value="#{filmesBeans.tiposFilme}" var="tipo" itemLabel="#{tipo.nome}"/>
+			</p:selectOneMenu>
+			<p></p>
+			<p:commandButton value="Cadastrar" update="panel" action="#{filmesBeans.cadastrar()}" styleClass="ui-priority-primary"/>
+		</h:form>
+
+		<p:dataTable var="filme" value="#{filmesBeans.filmes}" emptyMessage="Não há filmes cadastrados.">
+			<p:column headerText="Id">
+				<h:outputText value="#{filme.id}"/>
+			</p:column>
+
+			<p:column headerText="Nome">
+				<h:outputText value="#{filme.nome}"/>
+			</p:column>
+
+			<p:column headerText="Tipo">
+				<h:outputText value="#{filme.tipo.nome}"/>
+			</p:column>
+
+			<p:column headerText="Ações">
+				<p:commandButton action="#{filmesBeans.setFilme(filme)}" update="panel" icon="ui-icon-pencil"/>
+				<p:commandButton action="#{filmesBeans.deletar(filme)}" update="panel" icon="ui-icon-trash">
+					<p:confirm header="Confirmação" message="Tem certeza que quer deletar o filme #{filme.nome}?" icon="ui-icon-alert"/>
+				</p:commandButton>
+
+			</p:column>
+		</p:dataTable>
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+			<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+		</p:confirmDialog>
+	</p:panel>
+</h:body>
+</html>
