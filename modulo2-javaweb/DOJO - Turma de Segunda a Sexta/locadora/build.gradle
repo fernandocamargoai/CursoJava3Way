@@ -3,15 +3,27 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'war'
+apply plugin: 'jetty'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        url "http://repository.primefaces.org"
+    }
 }
 
 dependencies {
     runtime group: 'mysql', name: 'mysql-connector-java', version: '5.1.39'
     compile group: 'jstl', name: 'jstl', version: '1.2'
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    compile group: 'com.sun.faces', name: 'jsf-api', version: '2.2.14'
+    compile group: 'com.sun.faces', name: 'jsf-impl', version: '2.2.14'
+
+    compile group: 'org.primefaces.themes', name: 'bootstrap', version: '1.0.10'
+    compile group: 'org.primefaces', name: 'primefaces', version: '6.1'
+
+
 }

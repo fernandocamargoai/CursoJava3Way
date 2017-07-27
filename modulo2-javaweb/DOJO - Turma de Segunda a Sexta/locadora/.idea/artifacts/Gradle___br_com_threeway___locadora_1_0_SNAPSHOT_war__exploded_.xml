@@ -18,7 +18,11 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: jstl:jstl:1.2" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.39/4617fe8dc8f1969ec450984b0b9203bc8b7c8ad5/mysql-connector-java-5.1.39.jar" />
+          <element id="library" level="project" name="Gradle: org.primefaces.themes:bootstrap:1.0.10" />
+          <element id="library" level="project" name="Gradle: org.primefaces:primefaces:6.1" />
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.1.39" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.faces/jsf-api/2.2.14/8c736979a53c8f6bbc433c4871e87502e0b8a9a4/jsf-api-2.2.14.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.faces/jsf-impl/2.2.14/638282929a4f01cb0cd327fde5c1fc9b7a286f96/jsf-impl-2.2.14.jar" />
         </element>
       </element>
     </root>
