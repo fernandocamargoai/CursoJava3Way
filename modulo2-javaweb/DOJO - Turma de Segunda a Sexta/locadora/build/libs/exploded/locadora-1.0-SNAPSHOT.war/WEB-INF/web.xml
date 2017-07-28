@@ -18,4 +18,8 @@
 		<param-value>bootstrap</param-value>
 	</context-param>
 
+	<listener>
+		<listener-class>br.com.threeway.locadora.web.PersistenceAppListener</listener-class>
+	</listener>
+
 </web-app>

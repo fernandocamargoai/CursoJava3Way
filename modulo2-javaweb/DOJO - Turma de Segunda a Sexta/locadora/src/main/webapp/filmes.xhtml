@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
-	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  xmlns:p="http://primefaces.org/ui">
 
@@ -13,35 +12,46 @@
 	<p:panel id="painel">
 		<h:form id="formulario">
 			<p:panelGrid columns="5">
-			<p:outputLabel for="nomeFilme" value="Nome:" />
-			<p:inputText id="nomeFilme" value="#{filmesBean.filme.nome}"></p:inputText>
-			<p:outputLabel for="selectTipo" value="Tipo:" />
-			<p:selectOneMenu id="selectTipo" value="#{filmesBean.filme.tipo}" style="width:125px">
-				<f:selectItems itemLabel="#{tipo.nome}" value="#{filmesBean.tipos}" var="tipo" />
-			</p:selectOneMenu>
-			<p:commandButton update="painel" value="Salvar" action="#{filmesBean.salvar}"/>
+				<p:outputLabel for="nomeFilme" value="Nome:"/>
+				<p:inputText id="nomeFilme" value="#{filmesBean.filme.nome}"></p:inputText>
+				<p:outputLabel for="selectTipo" value="Tipo:"/>
+				<p:selectOneMenu id="selectTipo" value="#{filmesBean.filme.tipo}" style="width:125px">
+					<f:selectItems itemLabel="#{tipo.nome}" value="#{filmesBean.tipos}" var="tipo"/>
+				</p:selectOneMenu>
+				<p:commandButton update="painel" value="Salvar" action="#{filmesBean.salvar}"/>
 			</p:panelGrid>
+
+		</h:form>
+
+		<br></br>
+		<h:form id="busca">
+			<p:panel>
+				<p:outputLabel value="Busca"/>
+				<p:inputText value="#{filmesBean.busca}" onkeypress="">
+					<p:ajax event="keyup" update="painel"/>
+				</p:inputText>
+			</p:panel>
 		</h:form>
 		<br></br>
-		<p:dataTable var="filme" value="#{filmesBean.filmes}">
+		<p:dataTable emptyMessage="Sua busca não retornou resultados" var="filme" value="#{filmesBean.filmes}">
 
 			<p:column headerText="Nome">
-				<h:outputText value="#{filme.nome}" />
+				<h:outputText value="#{filme.nome}"/>
 			</p:column>
 
 			<p:column headerText="Tipo">
-				<h:outputText value="#{filme.tipo.nome}" />
+				<h:outputText value="#{filme.tipo.nome}"/>
 			</p:column>
 			<p:column headerText="Ações" style="width: 10%; text-align: center">
-				<p:commandButton update="painel" icon="ui-icon-pencil" action="#{filmesBean.setFilme(filme)}" />
-				<p:commandButton update="painel" icon="ui-icon-trash" action="#{filmesBean.deletar(filme)}" >
-					<p:confirm header="Confirmação" message="Deseja excluir o filme #{filme.nome}?" icon="ui-icon-alert" />
+				<p:commandButton update="painel" icon="ui-icon-pencil" action="#{filmesBean.setFilme(filme)}"/>
+				<p:commandButton update="painel" icon="ui-icon-trash" action="#{filmesBean.deletar(filme)}">
+					<p:confirm header="Confirmação" message="Deseja excluir o filme #{filme.nome}?" icon="ui-icon-alert"/>
 				</p:commandButton>
 			</p:column>
 		</p:dataTable>
 		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
-			<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-			<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+			<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+			<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
 		</p:confirmDialog>
 	</p:panel>
 

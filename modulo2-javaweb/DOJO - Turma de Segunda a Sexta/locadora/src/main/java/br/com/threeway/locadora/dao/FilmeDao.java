@@ -3,102 +3,117 @@ package br.com.threeway.locadora.dao;
 import br.com.threeway.locadora.domain.Filme;
 import br.com.threeway.locadora.domain.TipoFilme;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class FilmeDao {
 
+
 	public Filme pegueFilme(Long id){
-
-		try(Connection conexao = FabricaConexao.getConexao();
-			PreparedStatement stmt = conexao.prepareStatement("" +
-					"SELECT * FROM filmes WHERE id =?")) {
-
-			stmt.setLong(1, id);
-			ResultSet rs = stmt.executeQuery();
-
-			if(rs.next()){
-				Filme filme = new Filme();
-				filme.setId(rs.getLong("id"));
-				filme.setNome(rs.getString("nome"));
-				filme.setTipo(TipoFilme.valueOf(rs.getString("tipo")));
-				return filme;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		EntityManager em = null;
+		try{
+			em = PersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
+			return em.find(Filme.class,id);
 		}
-		return null;
+		finally {
+			if(em != null){
+				em.close();
+			}
+		}
+
 	}
 
 
 	public List<Filme> listeFilmes(){
-		List<Filme> lista = new ArrayList<>();
-		try(Connection conexao = FabricaConexao.getConexao();
-			PreparedStatement stmt = conexao.prepareStatement(
-					"SELECT * FROM filmes")) {
-			ResultSet rs = stmt.executeQuery();
-			while (rs.next()){
-				Filme filme = new Filme();
-				filme.setId(rs.getLong("id"));
-				filme.setNome(rs.getString("nome"));
-				filme.setTipo(TipoFilme.valueOf(rs.getString("tipo")));
-				lista.add(filme);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		EntityManager em = null;
+		try{
+			em = PersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
+			TypedQuery<Filme> query = em.createQuery(
+					"FROM Filme",Filme.class);
+
+			return query.getResultList();
 		}
-		return lista;
+		finally {
+			if(em != null){
+				em.close();
+			}
+		}
 	}
 
 
 	public void insira(Filme filme){
-		try(Connection conexao = FabricaConexao.getConexao();
-			PreparedStatement stmt = conexao.prepareStatement(
-					"INSERT INTO filmes (nome, tipo) VALUES (?, ?)")) {
-			stmt.setString(1, filme.getNome());
-			stmt.setString(2, String.valueOf(filme.getTipo()));
-
-			Integer sucesso = stmt.executeUpdate();
-			if(sucesso > 0){
-				System.out.println("ok");
-			}else{
-				System.out.println("Problema");
+		EntityManager em = null;
+		try{
+			em = PersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
+			em.getTransaction().begin();
+			em.persist(filme);
+			em.getTransaction().commit();
+		}catch (Exception e){
+			em.getTransaction().rollback();
+		}
+		finally {
+			if(em != null){
+				em.close();
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
 	}
 
 	public void atualize(Filme filme){
-		try(Connection conexao = FabricaConexao.getConexao();
-			PreparedStatement stmt = conexao.prepareStatement(
-					"UPDATE filmes SET nome=?, tipo=? WHERE id=?")) {
-
-			stmt.setString(1, filme.getNome());
-			stmt.setString(2, String.valueOf((filme.getTipo())));
-			stmt.setLong(3,filme.getId());
-
-			stmt.executeUpdate();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
+		EntityManager em = null;
+		try{
+			em = PersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
+			em.getTransaction().begin();
+			em.merge(filme);
+			em.getTransaction().commit();
+		}catch (Exception e){
+			em.getTransaction().rollback();
+		}
+		finally {
+			if(em != null){
+				em.close();
+			}
 		}
 	}
 
-	public void delete(Long id){
-		try (Connection conexao = FabricaConexao.getConexao();
-		PreparedStatement stmt = conexao.prepareStatement(
-				"DELETE FROM filmes WHERE id=?")){
+	public void delete(Filme filme){
+		EntityManager em = null;
+		try{
+			em = PersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
+			em.getTransaction().begin();
+			em.remove(em.merge(filme));
+			em.getTransaction().commit();
+		}catch (Exception e){
+			em.getTransaction().rollback();
+		}
+		finally {
+			if(em != null){
+				em.close();
+			}
+		}
+	}
 
-			stmt.setLong(1,id);
-			stmt.executeUpdate();
+	public List<Filme> busqueFilmes(String busca){
+		EntityManager em = null;
+		try{
+			em = PersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
+			TypedQuery<Filme> query = em.createQuery(
+					"FROM Filme f where f.nome like :busca",Filme.class);
 
-		} catch (SQLException e) {
-			e.printStackTrace();
+			query.setParameter("busca","%"+busca+"%");
+			return query.getResultList();
+		}
+		finally {
+			if(em != null){
+				em.close();
+			}
 		}
 	}
 }

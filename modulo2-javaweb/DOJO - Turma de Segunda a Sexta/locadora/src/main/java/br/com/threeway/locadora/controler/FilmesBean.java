@@ -15,6 +15,15 @@ public class FilmesBean  {
 
 	private FilmeDao dao = new FilmeDao();
 	private Filme filme = new Filme();
+	private String busca = "";
+
+	public String getBusca() {
+		return busca;
+	}
+
+	public void setBusca(String busca) {
+		this.busca = busca;
+	}
 
 	public Filme getFilme() {
 		return filme;
@@ -25,7 +34,7 @@ public class FilmesBean  {
 	}
 
 	public List<Filme> getFilmes(){
-		return dao.listeFilmes();
+		return dao.busqueFilmes(busca);
 	}
 
 	public TipoFilme[] getTipos() {
@@ -42,8 +51,9 @@ public class FilmesBean  {
 	}
 
 	public void deletar(Filme filme) {
-		dao.delete(filme.getId());
+		dao.delete(filme);
 		filme = new Filme();
 	}
+
 
 }
