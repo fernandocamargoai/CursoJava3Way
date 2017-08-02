@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.primefaces.extensions:resources-codemirror:6.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.primefaces.extensions/resources-codemirror/6.1.1/ab3c480afe3a27ba3097d58037ae47910ead2166/resources-codemirror-6.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.primefaces.extensions/resources-codemirror/6.1.1/a686d9aafcd96b0feedd6d3d8de0fefd9ac91dd/resources-codemirror-6.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

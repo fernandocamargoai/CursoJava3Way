@@ -3,17 +3,18 @@ package br.com.threeway.locadora.controler;
 import br.com.threeway.locadora.dao.FilmeDao;
 import br.com.threeway.locadora.domain.Filme;
 import br.com.threeway.locadora.domain.TipoFilme;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
 import java.util.List;
 
+@Controller
 @ViewScoped
-@ManagedBean (name = "filmesBean")
 public class FilmesBean  {
 
-	private FilmeDao dao = new FilmeDao();
+	@Autowired
+	private FilmeDao filmeDao;
 	private Filme filme = new Filme();
 	private String busca = "";
 
@@ -34,7 +35,7 @@ public class FilmesBean  {
 	}
 
 	public List<Filme> getFilmes(){
-		return dao.busqueFilmes(busca);
+		return filmeDao.findByNomeStartingWithIgnoreCase(busca);
 	}
 
 	public TipoFilme[] getTipos() {
@@ -42,16 +43,12 @@ public class FilmesBean  {
 	}
 
 	public void salvar() {
-		if (filme.getId() == null) {
-			dao.insira(filme);
-		} else {
-			dao.atualize(filme);
-		}
+		filmeDao.save(filme);
 		filme = new Filme();
 	}
 
 	public void deletar(Filme filme) {
-		dao.delete(filme);
+		filmeDao.delete(filme);
 		filme = new Filme();
 	}
 

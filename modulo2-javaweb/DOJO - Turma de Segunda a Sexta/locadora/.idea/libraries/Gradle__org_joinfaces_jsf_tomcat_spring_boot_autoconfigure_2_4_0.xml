@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.joinfaces:jsf-tomcat-spring-boot-autoconfigure:2.4.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joinfaces/jsf-tomcat-spring-boot-autoconfigure/2.4.0/762be80a76cca38a5b4cfccf59382f464052f0c3/jsf-tomcat-spring-boot-autoconfigure-2.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.joinfaces/jsf-tomcat-spring-boot-autoconfigure/2.4.0/846e172ff38e6d2b43bfeb91675f3d5609ae8c6a/jsf-tomcat-spring-boot-autoconfigure-2.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

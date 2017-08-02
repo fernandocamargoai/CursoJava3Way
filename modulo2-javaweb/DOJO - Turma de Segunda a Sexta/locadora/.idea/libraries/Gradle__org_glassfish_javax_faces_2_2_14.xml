@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish:javax.faces:2.2.14">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.faces/2.2.14/5d800b8f5c47eae7ba9a195cabd589f27b2ef424/javax.faces-2.2.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.faces/2.2.14/1eee8fa7eebb69650476a8f38bc21c3e548ed441/javax.faces-2.2.14-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

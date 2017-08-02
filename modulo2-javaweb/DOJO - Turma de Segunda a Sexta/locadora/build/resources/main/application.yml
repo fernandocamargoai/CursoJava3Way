@@ -1,0 +1,7 @@
+jsf:
+  primefaces:
+    theme: bootstrap
+spring.jpa.hibernate.ddl-auto: create-drop
+spring.datasource.url: jdbc:mysql://localhost/Locadora2
+spring.datasource.username: root
+spring.datasource.password: root

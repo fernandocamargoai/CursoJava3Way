@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.primefaces.extensions:resources-ckeditor:6.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.primefaces.extensions/resources-ckeditor/6.1.1/77b5d3576bb0efe3af809dcca7ed03859dc48ff2/resources-ckeditor-6.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.primefaces.extensions/resources-ckeditor/6.1.1/909ad1c2696e2e752dc9a9d8a80ce3ec695c1885/resources-ckeditor-6.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
