@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: fernandocamargo
+  Date: 03/08/17
+  Time: 19:28
+-->
+<!DOCTYPE html
+		PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:param name="title" value="Locadora"/></title>
+</h:head>
+
+<h:body>
+	<div id="header">
+		<ui:insert name="header">
+			<h:form>
+				<p:menubar>
+					<p:menuitem value="Filmes" action="filmes?faces-redirect=true"/>
+					<p:menuitem value="Tipos de Filme" action="tipos?faces-redirect=true"/>
+				</p:menubar>
+			</h:form>
+		</ui:insert>
+	</div>
+	<div id="content">
+		<ui:insert name="content">
+
+		</ui:insert>
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+			<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+		</p:confirmDialog>
+		<p:growl autoUpdate="true" />
+	</div>
+</h:body>
+
+</html>

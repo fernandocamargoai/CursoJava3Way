@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+	<ui:composition template="WEB-INF/template.xhtml">
+		<ui:param name="title" value="Tipos de Filme"/>
+
+		<ui:define name="content">
+			<p:panel id="painel">
+				<h:form id="formulario">
+					<p:panelGrid columns="2">
+						<p:outputLabel for="nome" value="Nome:"/>
+						<p:inputText id="nome" value="#{tiposBean.tipoFilme.nome}"/>
+						<p:outputLabel for="quantidade" value="Quantidade de dias:"/>
+						<p:inputNumber id="quantidade" value="#{tiposBean.tipoFilme.quantidadeDeDias}"
+									   decimalPlaces="0"/>
+						<p:outputLabel for="locacao" value="Valor da Locação:"/>
+						<p:inputNumber id="locacao" value="#{tiposBean.tipoFilme.valorDaLocacao}"
+									   decimalPlaces="2" decimalSeparator="," symbol="R$ " symbolPosition="p"/>
+						<p:outputLabel for="relocacao" value="Valor da Relocação:"/>
+						<p:inputNumber id="relocacao" value="#{tiposBean.tipoFilme.valorDaRelocacao}"
+									   decimalPlaces="2" decimalSeparator="," symbol="R$ " symbolPosition="p"/>
+						<p:commandButton value="Salvar" action="#{tiposBean.save}" update="painel" />
+					</p:panelGrid>
+				</h:form>
+
+				<p:separator />
+
+				<p:dataTable value="#{tiposBean.tipos}" var="tipo" emptyMessage="Nenhum tipo de filme cadastrado">
+					<p:column headerText="Nome">
+						<h:outputText value="#{tipo.nome}" />
+					</p:column>
+					<p:column headerText="Quantidade de dias">
+						<h:outputText value="#{tipo.quantidadeDeDias}" />
+					</p:column>
+					<p:column headerText="Preço de Locação">
+						<h:outputText value="#{tipo.valorDaLocacao}">
+							<f:convertNumber currencySymbol="R$" type="currency" />
+						</h:outputText>
+					</p:column>
+					<p:column headerText="Preço de Relocação">
+						<h:outputText value="#{tipo.valorDaRelocacao}">
+							<f:convertNumber currencySymbol="R$" type="currency" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Ações" style="width: 10%; text-align: center">
+						<p:commandButton update="painel" icon="ui-icon-pencil" action="#{tiposBean.setTipoFilme(tipo)}"/>
+						<p:commandButton update="painel" icon="ui-icon-trash" action="#{tiposBean.delete(tipo)}">
+							<p:confirm header="Confirmação" message="Deseja excluir o tipo de filme #{tipo.nome}?" icon="ui-icon-alert"/>
+						</p:commandButton>
+					</p:column>
+
+				</p:dataTable>
+			</p:panel>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

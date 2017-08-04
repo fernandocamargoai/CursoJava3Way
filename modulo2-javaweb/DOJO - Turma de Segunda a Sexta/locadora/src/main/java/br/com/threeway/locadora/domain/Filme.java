@@ -1,17 +1,16 @@
 package br.com.threeway.locadora.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
-public class Filme {
+@javax.persistence.Entity
+public class Filme implements Entity {
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
+	@ManyToOne
+	@JoinColumn
 	private TipoFilme tipo;
 
 	public Long getId() {
