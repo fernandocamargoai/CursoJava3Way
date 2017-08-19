@@ -13,18 +13,18 @@
 	<p:panel id="panel">
 		<h:form id="cadastrar">
 			<p:outputLabel for="nome" value="Nome:"/>
-			<p:inputText id="nome" value="#{filmesBeans.filme.nome}"/>
+			<p:inputText id="nome" value="#{filmesBean.filme.nome}"/>
 			<p></p>
 			<p:outputLabel for="TipoFilme" value="Tipo:"/>
 
-			<p:selectOneMenu id="TipoFilme" value="#{filmesBeans.filme.tipo}">
-				<f:selectItems value="#{filmesBeans.tiposFilme}" var="tipo" itemLabel="#{tipo.nome}"/>
+			<p:selectOneMenu id="TipoFilme" value="#{filmesBean.filme.tipo}">
+				<f:selectItems value="#{filmesBean.tiposFilme}" var="tipo" itemLabel="#{tipo.nome}"/>
 			</p:selectOneMenu>
 			<p></p>
-			<p:commandButton value="Cadastrar" update="panel" action="#{filmesBeans.cadastrar()}" styleClass="ui-priority-primary"/>
+			<p:commandButton value="Cadastrar" update="panel" action="#{filmesBean.cadastrar()}" styleClass="ui-priority-primary"/>
 		</h:form>
 
-		<p:dataTable var="filme" value="#{filmesBeans.filmes}" emptyMessage="Não há filmes cadastrados. ">
+		<p:dataTable var="filme" value="#{filmesBean.filmes}" emptyMessage="Não há filmes cadastrados. ">
 			<p:column headerText="Id">
 				<h:outputText value="#{filme.id}"/>
 			</p:column>
@@ -38,8 +38,8 @@
 			</p:column>
 
 			<p:column headerText="Ações">
-				<p:commandButton action="#{filmesBeans.setFilme(filme)}" update="panel" icon="ui-icon-pencil"/>
-				<p:commandButton action="#{filmesBeans.deletar(filme)}" update="panel" icon="ui-icon-trash">
+				<p:commandButton action="#{filmesBean.setFilme(filme)}" update="panel" icon="ui-icon-pencil"/>
+				<p:commandButton action="#{filmesBean.deletar(filme)}" update="panel" icon="ui-icon-trash">
 					<p:confirm header="Confirmação" message="Tem certeza que quer deletar o filme #{filme.nome}?" icon="ui-icon-alert"/>
 				</p:commandButton>
 

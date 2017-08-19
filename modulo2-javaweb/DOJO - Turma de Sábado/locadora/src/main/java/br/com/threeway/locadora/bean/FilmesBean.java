@@ -1,43 +1,41 @@
 package br.com.threeway.locadora.bean;
 
-import br.com.threeway.locadora.dao.FilmeDAO;
 import br.com.threeway.locadora.domain.Filme;
 import br.com.threeway.locadora.domain.TipoFilme;
+import br.com.threeway.locadora.service.FilmeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import java.io.Serializable;
 import java.util.List;
 
-@ManagedBean(name = "filmesBeans")
+@Component
 @ViewScoped
 public class FilmesBean implements Serializable {
 
+	@Autowired
+	private FilmeService filmeService;
+
 	private Filme filme = new Filme();
-	private FilmeDAO filmeDAO = new FilmeDAO();
 
 	public TipoFilme[] getTiposFilme() {
 		return TipoFilme.values();
 	}
 
 	public void cadastrar() {
-		if (filme.getId() != null) {
-			filmeDAO.update(filme);
-		} else {
-			filmeDAO.cadastro(filme);
-		}
+		filmeService.save(filme);
+
 		filme = new Filme();
 
 	}
 
-	public void deletar(Filme filme){
-
-		filmeDAO.delete(filme.getId());
-
+	public void deletar(Filme filme) {
+		filmeService.delete(filme.getId());
 	}
 
 	public List<Filme> getFilmes() {
-		return filmeDAO.findAll();
+		return filmeService.findAll();
 	}
 
 	public Filme getFilme() {

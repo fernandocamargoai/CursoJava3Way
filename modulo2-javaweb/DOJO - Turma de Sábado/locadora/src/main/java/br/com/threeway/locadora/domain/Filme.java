@@ -1,9 +1,15 @@
 package br.com.threeway.locadora.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Filme {
 
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String nome;
+	@Enumerated(EnumType.STRING)
 	private TipoFilme tipo;
 
 	public Long getId() {

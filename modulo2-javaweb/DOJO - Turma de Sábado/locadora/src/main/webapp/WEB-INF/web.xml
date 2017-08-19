@@ -8,20 +8,4 @@
 		<welcome-file>filmes.xhtml</welcome-file>
 	</welcome-file-list>
 
-	<servlet>
-		<servlet-name>faces</servlet-name>
-		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-
-	<context-param>
-		<param-name>primefaces.THEME</param-name>
-		<param-value>omega</param-value>
-	</context-param>
-
-	<servlet-mapping>
-		<servlet-name>faces</servlet-name>
-		<url-pattern>*.jsf</url-pattern>
-		<url-pattern>*.xhtml</url-pattern>
-	</servlet-mapping>
 </web-app>
